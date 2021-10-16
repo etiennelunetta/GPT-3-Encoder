@@ -1,4 +1,4 @@
-export declare const encoder_json: {
+declare const _default: {
     "!": number;
     "\"": number;
     "#": number;
@@ -50257,3 +50257,4 @@ export declare const encoder_json: {
     Ġgazed: number;
     "<|endoftext|>": number;
 };
+export default _default;

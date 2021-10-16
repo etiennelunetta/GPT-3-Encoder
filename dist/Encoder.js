@@ -1,10 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.decode = exports.encode = void 0;
 // This file includes code which was modified from https://github.com/openai/gpt-2
-const encoder_json_1 = require("./encoder_json");
-const vocab_1 = require("./vocab");
-const encoder = encoder_json_1.encoder_json;
+import encoder from "./encoder_json.js";
+import bpe_file from "./vocab.js";
 const range = (x, y) => {
     const res = Array.from(Array(y).keys()).slice(x);
     return res;
@@ -57,7 +53,7 @@ function get_pairs(word) {
 const pat = /'s|'t|'re|'ve|'m|'ll|'d| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+/gu;
 const decoder = {};
 Object.keys(encoder).map(x => { decoder[encoder[x]] = x; });
-const lines = vocab_1.bpe_file.split('\n');
+const lines = bpe_file.split('\n');
 // bpe_merges = [tuple(merge_str.split()) for merge_str in bpe_data.split("\n")[1:-1]]
 const bpe_merges = lines.slice(1, lines.length - 1).map(x => {
     return x.split(/(\s+)/).filter(function (e) { return e.trim().length > 0; });
@@ -122,7 +118,7 @@ function bpe(token) {
     cache[token] = word;
     return word;
 }
-function encode(text) {
+export function encode(text) {
     let bpe_tokens = [];
     const matches = Array.from(text.matchAll(pat)).map(x => x[0]);
     for (let token of matches) {
@@ -134,11 +130,9 @@ function encode(text) {
     }
     return bpe_tokens;
 }
-exports.encode = encode;
-function decode(tokens) {
+export function decode(tokens) {
     let text = tokens.map(x => decoder[x]).join('');
     text = decodeStr(text.split('').map(x => byte_decoder[x]));
     return text;
 }
-exports.decode = decode;
 //# sourceMappingURL=Encoder.js.map

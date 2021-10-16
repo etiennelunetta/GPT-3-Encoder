@@ -2,13 +2,14 @@
   "compilerOptions": {
     "composite": true,
     "target": "ESNext",
-    "module": "CommonJS",
+    "module": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,

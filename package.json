@@ -4,6 +4,7 @@
   "description": "Javascript BPE Encoder Decoder for GPT-2 / GPT-3",
   "main": "dist/index",
   "typings": "dist/index",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "build": "npm run tsc"

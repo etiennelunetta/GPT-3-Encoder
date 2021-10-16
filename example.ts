@@ -1,4 +1,4 @@
-import { decode, encode } from "./Encoder"
+import { decode, encode } from "./Encoder.js"
 
 
 const str = 'This is an example sentence to try encoding out on!'

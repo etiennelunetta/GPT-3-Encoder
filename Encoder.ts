@@ -1,7 +1,6 @@
 // This file includes code which was modified from https://github.com/openai/gpt-2
-import { encoder_json } from "./encoder_json"
-import { bpe_file } from "./vocab"
-const encoder = encoder_json
+import encoder from "./encoder_json.js"
+import bpe_file from "./vocab.js"
 
 const range = (x, y) => {
   const res = Array.from(Array(y).keys()).slice(x)
