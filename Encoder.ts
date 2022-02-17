@@ -1,8 +1,7 @@
 // This file includes code which was modified from https://github.com/openai/gpt-2
-/// <reference path="./node.d.ts" />
 
 import encoder from "./encoder_json.js"
-import bpe_file from 'vocab.bpe';
+import fs from "fs"
 
 const range = (x, y) => {
   const res = Array.from(Array(y).keys()).slice(x)
@@ -69,6 +68,7 @@ const pat = /'s|'t|'re|'ve|'m|'ll|'d| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!
 const decoder = {}
 Object.keys(encoder).map(x => { decoder[encoder[x]] = x })
 
+const bpe_file = fs.readFileSync("./vocab.bpe").toString();
 const lines = bpe_file.split('\n')
 
 // bpe_merges = [tuple(merge_str.split()) for merge_str in bpe_data.split("\n")[1:-1]]
