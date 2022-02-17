@@ -26,6 +26,7 @@
     "sourceMap": true
   },
   "include": [
-    "./*.ts"
+    "./*.ts", 
+    "./vocab.bpe"
   ]
 }
