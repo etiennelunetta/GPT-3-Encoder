@@ -1,5 +1,5 @@
 {
-  "name": "gpt-3-encoder-browser",
+  "name": "nx-encoder",
   "version": "1.1.3",
   "description": "Javascript BPE Encoder Decoder for GPT-2 / GPT-3",
   "main": "dist/index",
@@ -14,14 +14,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hugbubby/GPT-3-Encoder.git"
+    "url": "git+https://github.com/etiennelunetta/nx-encoder.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hugbubby/GPT-3-Encoder/issues"
+    "url": "https://github.com/etiennelunetta/nx-encoder/issues"
   },
-  "homepage": "https://github.com/hugbubby/GPT-3-Encoder#readme",
+  "homepage": "https://github.com/etiennelunetta/nx-encoder#readme",
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.25",
